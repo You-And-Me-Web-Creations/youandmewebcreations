@@ -1,34 +1,35 @@
 import React from "react";
+
 import { bool } from "prop-types";
-import { StyledMenu } from "./Menu.styled";
+import { StyledMenu, OptionLink } from "./Menu.styled";
 
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
+      <OptionLink exact to="/" activeClassName="selected">
         <span role="img" aria-label="about us">
           &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
         </span>
         About us
-      </a>
-      <a href="/">
+      </OptionLink>
+      <OptionLink to="/WebDevelopment" activeClassName="selected">
         <span role="img" aria-label="website development">
           &#x1f578;
         </span>
         Website <br /> Development
-      </a>
-      <a href="/">
+      </OptionLink>
+      <OptionLink to="/Portfolio" activeClassName="selected">
         <span role="img" aria-label="portfolio">
           &#x1f5BC;
         </span>
         Portfolio
-      </a>
-      <a href="/">
+      </OptionLink>
+      <OptionLink to="/Contact Us" activeClassName="selected">
         <span role="img" aria-label="contact">
           &#x1f4e9;
         </span>
         Contact
-      </a>
+      </OptionLink>
     </StyledMenu>
   );
 };
