@@ -24,11 +24,11 @@ const Menu = ({ open }) => {
         </span>
         Portfolio
       </OptionLink>
-      <OptionLink to="/Contact Us" activeClassName="selected">
+      <OptionLink to="/Contact_Us" activeClassName="selected">
         <span role="img" aria-label="contact">
           &#x1f4e9;
         </span>
-        Contact
+        Contact Us
       </OptionLink>
     </StyledMenu>
   );

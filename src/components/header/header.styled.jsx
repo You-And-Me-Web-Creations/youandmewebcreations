@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div`
   border: 2px;
 
   @media screen and (min-width: 450px) {
-    height: 100px;
+    height: 150px;
   }
 `;
 
