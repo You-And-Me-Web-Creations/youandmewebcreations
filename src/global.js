@@ -33,8 +33,10 @@ export const GlobalStyles = createGlobalStyle`
   small {
     display: block;
   }
-  a {
+  ${
+    "" /* a {
     color: ${({ theme }) => theme.primaryHover};
     text-decoration: none;
+  } */
   }
 `;

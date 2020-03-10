@@ -16,16 +16,22 @@ const HomePage = () => {
         <ColoredDiv
           bg={({ theme }) => theme.palletGreen}
           fc={({ theme }) => theme.palletPurple}
-          text="My name is Diane Leigh, and I am a freelance web developer/designer,
-            located in Leavittsburg Ohio. I have been designing and developing
-            websites for 4 years. Because, after 30+ years in medical research I wanted the freedom and flexibility to enjoy my granddaugter and her
-            numerous activities."
+          text="My name is Diane Leigh, and I am a freelance web developer/designer, located in Leavittsburg Ohio. I have been designing and developing websites for 4 years. Because, after 30+ years in medical research I wanted the freedom and flexibility to enjoy my granddaugter and her numerous activities. For more background check out my "
+          go_to={
+            <a
+              href="https://leighd2008.github.io/My_Profile/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Profile Page!
+            </a>
+          }
           rotation="rotate(-10deg)"
         ></ColoredDiv>
         <ColoredDiv
           bg={({ theme }) => theme.palletOrange}
           fc={({ theme }) => theme.palletBlue}
-          text="I have created everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. I can integrate your calendar and incorporate a schedualing componet."
+          text="I have created everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. I can integrate your calendar and incorporate a schedualing componet. You can view my work here!"
           rotation="rotate(5deg)"
         ></ColoredDiv>
         <ColoredDiv
