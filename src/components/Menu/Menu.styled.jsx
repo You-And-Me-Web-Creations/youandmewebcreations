@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const StyledMenu = styled.nav`
   display: flex;
@@ -41,7 +41,7 @@ export const StyledMenu = styled.nav`
   }
 `;
 
-export const OptionLink = styled(Link)`
+export const OptionLink = styled(NavLink)`
   padding: 5px 10px;
   color: black;
   cursor: pointer;

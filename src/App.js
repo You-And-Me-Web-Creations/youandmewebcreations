@@ -22,10 +22,19 @@ function App() {
         <Switch>
           <ErrorBoundary>
             <Suspense fallback={<Spinner />}>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/WebDevelopment" component={WebDevPage} />
-              <Route path="/Portfolio" component={PortfolioPage} />
-              <Route path="/Contact_Us" component={ContactPage} />
+              <Route exact path="/" render={props => <HomePage {...props} />} />
+              <Route
+                path="/WebDevelopment"
+                render={props => <WebDevPage {...props} />}
+              />
+              <Route
+                path="/Portfolio"
+                render={props => <PortfolioPage {...props} />}
+              />
+              <Route
+                path="/Contact_Us"
+                render={props => <ContactPage {...props} />}
+              />
             </Suspense>
           </ErrorBoundary>
         </Switch>

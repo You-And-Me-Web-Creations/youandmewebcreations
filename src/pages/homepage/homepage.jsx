@@ -1,6 +1,7 @@
 import React, { Profiler } from "react";
 
 import ColoredDiv from "../../components/coloreddiv/coloreddiv";
+import Contact from "../../components/contact/contact";
 
 import { HomePageContainer } from "./homepage.styles";
 
@@ -31,7 +32,12 @@ const HomePage = () => {
         <ColoredDiv
           bg={({ theme }) => theme.palletOrange}
           fc={({ theme }) => theme.palletBlue}
-          text="I have created everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. I can integrate your calendar and incorporate a schedualing componet. You can view my work here!"
+          text="I have created everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. I can integrate your calendar and incorporate a schedualing componet. You can view "
+          go_to={
+            <a href="Portfolio" rel="noopener noreferrer">
+              My work here!
+            </a>
+          }
           rotation="rotate(5deg)"
         ></ColoredDiv>
         <ColoredDiv
@@ -43,7 +49,12 @@ const HomePage = () => {
         <ColoredDiv
           bg={({ theme }) => theme.palletPurple}
           fc={({ theme }) => theme.palletOrangeFont}
-          text="This is going to be an email contact form!"
+          text={
+            <div>
+              <h1>Let's Talk</h1>
+              <Contact />
+            </div>
+          }
           rotation="rotate(10deg)"
         ></ColoredDiv>
       </Profiler>

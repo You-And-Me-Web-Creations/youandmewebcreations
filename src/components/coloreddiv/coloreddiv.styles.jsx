@@ -14,4 +14,9 @@ export const ColoredDivContainer = styled.div`
 
 export const DivText = styled.h3`
   color: ${props => props.fc};
+
+  a {
+    color: ${props => props.fc};
+    text-transform: uppercase;
+  }
 `;
