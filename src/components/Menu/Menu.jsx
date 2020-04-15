@@ -1,9 +1,10 @@
 import React from "react";
+import { auth } from "../../firebase/firebase.utils";
 
 import { bool } from "prop-types";
 import { StyledMenu, OptionLink } from "./Menu.styled";
 
-const Menu = ({ open, setOpen }) => {
+const Menu = ({ open, setOpen, currentUser }) => {
   return (
     <StyledMenu open={open}>
       <OptionLink
@@ -47,10 +48,36 @@ const Menu = ({ open, setOpen }) => {
         </span>
         Contact Us
       </OptionLink>
+      {currentUser ? (
+        <OptionLink
+          to="/"
+          className="option"
+          onClick={() => {
+            auth.signOut();
+            setOpen(false);
+          }}
+        >
+          <span role="img" aria-label="signOut">
+            &#x274C;
+          </span>
+          SIGN OUT
+        </OptionLink>
+      ) : (
+        <OptionLink
+          to="/Sign_In"
+          activeClassName="selected"
+          onClick={() => setOpen(false)}
+        >
+          <span role="img" aria-label="signIn">
+            &#x270D;
+          </span>
+          SIGN IN
+        </OptionLink>
+      )}
     </StyledMenu>
   );
 };
 Menu.propTypes = {
-  open: bool.isRequired
+  open: bool.isRequired,
 };
 export default Menu;

@@ -8,10 +8,10 @@ import { ReactComponent as Logo } from "../assets/web_sq.svg";
 import {
   HeaderContainer,
   LogoContainer,
-  TitleContainer
+  TitleContainer,
 } from "./header.styled";
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
@@ -24,7 +24,7 @@ const Header = () => {
       <TitleContainer>You and Me Web Creations</TitleContainer>
       <div ref={node}>
         <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} currentUser={currentUser} />
       </div>
     </HeaderContainer>
   );

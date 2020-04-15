@@ -1,4 +1,17 @@
 import React from "react";
+import firebase from "firebase/app";
+import "firebase/database";
+// import { getDefaultNormalizer } from "@testing-library/react";
+import Axios from "axios";
+
+const config = {
+  apiKey: "AIzaSyDc-KU6Ln6IgozqJhOn5SVgG4LrhyhufSY",
+  databaseURL: "https://youandmewebcreations-2b76d.firebaseio.com"
+};
+
+if (!firebase) {
+  firebase.initializeApp(config);
+}
 
 class Contact extends React.Component {
   constructor(props) {
@@ -9,6 +22,7 @@ class Contact extends React.Component {
       message: ""
     };
   }
+
   onNameChange(event) {
     this.setState({ name: event.target.value });
   }
@@ -21,7 +35,32 @@ class Contact extends React.Component {
     this.setState({ message: event.target.value });
   }
 
-  handleSubmit(event) {}
+  handleSubmit(event) {
+    event.preventDefault();
+
+    const data = {
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message
+      // time: Date.getTime()
+    };
+
+    Axios.post(
+      "https://us-centrall-youandmewebcreations.cloudfunctions.net/submit",
+      data
+    )
+      .then(res => {
+        if (firebase) {
+          return firebase
+            .database()
+            .ref("contacts")
+            .push(data);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   render() {
     return (
