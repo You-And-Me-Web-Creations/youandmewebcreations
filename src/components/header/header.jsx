@@ -11,7 +11,7 @@ import {
   TitleContainer,
 } from "./header.styled";
 
-const Header = ({ currentUser }) => {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
@@ -24,7 +24,7 @@ const Header = ({ currentUser }) => {
       <TitleContainer>You and Me Web Creations</TitleContainer>
       <div ref={node}>
         <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} currentUser={currentUser} />
+        <Menu open={open} setOpen={setOpen} />
       </div>
     </HeaderContainer>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import { auth } from "../../firebase/firebase.utils";
 
 import { bool } from "prop-types";
@@ -80,4 +82,9 @@ const Menu = ({ open, setOpen, currentUser }) => {
 Menu.propTypes = {
   open: bool.isRequired,
 };
-export default Menu;
+
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Menu);
