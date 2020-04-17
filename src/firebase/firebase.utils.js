@@ -1,16 +1,18 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/database";
+import Axios from "axios";
 
 const config = {
-  apiKey: "AIzaSyDc-KU6Ln6IgozqJhOn5SVgG4LrhyhufSY",
-  authDomain: "youandmewebcreations-2b76d.firebaseapp.com",
-  databaseURL: "https://youandmewebcreations-2b76d.firebaseio.com",
-  projectId: "youandmewebcreations-2b76d",
-  storageBucket: "youandmewebcreations-2b76d.appspot.com",
-  messagingSenderId: "365687070368",
-  appId: "1:365687070368:web:c9e3edac2a98e0935c33c5",
-  measurementId: "G-PNY1FGXQBV",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_MESSAGING_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MESSAGING_MEASUREMENT_ID,
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -39,6 +41,7 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export { Axios };
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ promt: "select_account" });

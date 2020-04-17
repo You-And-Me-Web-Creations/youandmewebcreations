@@ -1,110 +1,71 @@
-import React from "react";
-import firebase from "firebase/app";
-import "firebase/database";
-// import { getDefaultNormalizer } from "@testing-library/react";
-import Axios from "axios";
+import React, { useState } from "react";
+import { Axios, firestore } from "../../firebase/firebase.utils";
+import "./contact.scss";
 
-const config = {
-  apiKey: "AIzaSyDc-KU6Ln6IgozqJhOn5SVgG4LrhyhufSY",
-  databaseURL: "https://youandmewebcreations-2b76d.firebaseio.com"
-};
+const Contact = () => {
+  const [formData, setFormData] = useState({});
 
-if (!firebase) {
-  firebase.initializeApp(config);
-}
-
-class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  const updateInput = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendEmail();
+    setFormData({
       name: "",
       email: "",
-      message: ""
-    };
-  }
-
-  onNameChange(event) {
-    this.setState({ name: event.target.value });
-  }
-
-  onEmailChange(event) {
-    this.setState({ email: event.target.value });
-  }
-
-  onMessageChange(event) {
-    this.setState({ message: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    const data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-      // time: Date.getTime()
-    };
-
+      message: "",
+    });
+  };
+  const sendEmail = () => {
     Axios.post(
-      "https://us-centrall-youandmewebcreations.cloudfunctions.net/submit",
-      data
+      "https://us-central1-youandmewebcreations-2b76d.cloudfunctions.net/submit",
+      formData
     )
-      .then(res => {
-        if (firebase) {
-          return firebase
-            .database()
-            .ref("contacts")
-            .push(data);
-        }
+      .then((res) => {
+        firestore.collection("emails").add({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          time: new Date(),
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
-  render() {
-    return (
-      <div className="App">
-        <form
-          id="contact-form"
-          onSubmit={this.handleSubmit.bind(this)}
-          method="POST"
-        >
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.name}
-              onChange={this.onNameChange.bind(this)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              aria-describedby="emailHelp"
-              value={this.state.email}
-              onChange={this.onEmailChange.bind(this)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              className="form-control"
-              rows="5"
-              value={this.state.message}
-              onChange={this.onMessageChange.bind(this)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={updateInput}
+          value={formData.name || ""}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={updateInput}
+          value={formData.email || ""}
+        />
+        <textarea
+          type="text"
+          name="message"
+          placeholder="Message"
+          onChange={updateInput}
+          value={formData.message || ""}
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </>
+  );
+};
 
 export default Contact;
