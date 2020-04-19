@@ -27,8 +27,10 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const TitleContainer = styled.h1`
+  color: black;
   position: absolute;
   top: 5%;
   left: 50%;
+  letter-spacing: normal;
   transform: translate(-50%, -50%);
 `;
