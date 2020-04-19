@@ -20,7 +20,7 @@ const HomePage = () => {
           text={
              <div>
               <h3>Welcome to You and Me Web Creations </h3>
-              <span>My name is Diane Leigh, I am a freelance web developer/designer, located in Leavittsburg Ohio. After 30+ years in medical research I needed freedom and flexibility to enjoy my granddaugter. So, let me help you get your presence known to the world. For more background check out my</span>
+              <h3>My name is Diane Leigh, I am a freelance web developer/designer, located in Leavittsburg Ohio. After 30+ years in medical research I needed freedom and flexibility to enjoy my granddaugter. So, let me help you get your presence known to the world. For more background check out my</h3>
             </div>
             }
           go_to={
@@ -29,7 +29,7 @@ const HomePage = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Profile Page!
+              <h3>Profile Page!</h3>
             </a>
           }
           rotation="rotate(-10deg)"
@@ -39,12 +39,12 @@ const HomePage = () => {
           fc={({ theme }) => theme.palletBlue}
           text={
             <div>
-            "We can create everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. We can integrate your calendar and incorporate a schedualing component."
+              <h3>We can create everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. We can integrate your calendar and incorporate a schedualing component.</h3>
             </div>
             }
           go_to={
             <a href="Portfolio" rel="noopener noreferrer">
-              View my work here!
+              <h3>View my work here!</h3>
             </a>
           }
           rotation="rotate(5deg)"
@@ -52,14 +52,19 @@ const HomePage = () => {
         <ColoredDiv
           bg={({ theme }) => theme.palletBlue}
           fc={({ theme }) => theme.palletGreen}
-          text="My favorite part of web design is figuring out how to put the pieces together in unique and refreshing ways. We can work from your vision, or mine to create the website of your dreams. So let's get you known to the world!"
+          text={
+            <div>
+              <h3>My favorite part of web design is figuring out how to put the pieces together in unique and refreshing ways. We can work from your vision, or mine to create the website of your dreams. So let's get you known to the world!</h3>
+            </div>
+          }
           rotation="rotate(-5deg)"
         ></ColoredDiv>
         <ColoredDiv
+          id={'contact'}
           bg={({ theme }) => theme.palletPurple}
           fc={({ theme }) => theme.palletOrangeFont}
           text={
-            <div>
+            <div >
               <h1>Let's Talk</h1>
               <Contact />
             </div>

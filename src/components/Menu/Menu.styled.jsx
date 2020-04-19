@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: ${({ theme }) => theme.palletOrange};
   transform: ${({ open }) => (open ? "translateX(10%)" : "translateX(110%)")};
-  height: 45vh;
+  height: 20vh;
   text-align: left;
   padding: 10rem 2rem;
   position: absolute;

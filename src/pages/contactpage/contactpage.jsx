@@ -1,9 +1,23 @@
 import React from "react";
 
+import ColoredDiv from "../../components/coloreddiv/coloreddiv";
+import Contact from "../../components/contact/contact";
+
 const ContactPage = () => {
   return (
     <div>
-      <h1>Contact Us</h1>
+      <ColoredDiv
+        id={'contact'}
+        bg={({ theme }) => theme.palletPurple}
+        fc={({ theme }) => theme.palletOrangeFont}
+        text={
+          <div >
+            <h1>Let's Talk</h1>
+            <Contact />
+          </div>
+        }
+        rotation="rotate(10deg)"
+      ></ColoredDiv>
     </div>
   );
 };

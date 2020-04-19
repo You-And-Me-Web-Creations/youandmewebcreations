@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ColoredDivContainer = styled.div`
   width: 80%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background: ${props => props.bg};
   padding: 3rem;
@@ -12,7 +12,8 @@ export const ColoredDivContainer = styled.div`
   transform: ${props => props.rotation};
 `;
 
-export const DivText = styled.h3`
+export const DivText = styled.div`
+  width: 100%;
   color: ${props => props.fc};
 
   a {
@@ -20,3 +21,16 @@ export const DivText = styled.h3`
     text-transform: uppercase;
   }
 `;
+
+export const WebsiteContainer = styled.div`
+  width: 60%;
+  a {
+    color: ${props => props.fc};
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 80%
+  }
+
+`

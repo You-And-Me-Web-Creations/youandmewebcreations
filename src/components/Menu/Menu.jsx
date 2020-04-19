@@ -20,7 +20,7 @@ const Menu = ({ open, setOpen, currentUser }) => {
         </span>
         About us
       </OptionLink>
-      <OptionLink
+      {/* <OptionLink
         to="/WebDevelopment"
         activeClassName="selected"
         onClick={() => setOpen(false)}
@@ -29,7 +29,7 @@ const Menu = ({ open, setOpen, currentUser }) => {
           &#x1f578;
         </span>
         Website <br /> Development
-      </OptionLink>
+      </OptionLink> */}
       <OptionLink
         to="/Portfolio"
         activeClassName="selected"
