@@ -1,8 +1,10 @@
 const functions = require("firebase-functions");
+// const admin = require("firebase-admin");
 const nodemailer = require("nodemailer");
 const cors = require("cors")({ origin: true });
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
+// admin.initializeApp();
 
 const mailTransport = nodemailer.createTransport({
   service: "gmail",
@@ -27,10 +29,14 @@ exports.submit = functions.https.onRequest((req, res) => {
       html: `<p>${req.body.message}</p>`,
     };
 
-    return mailTransport.sendMail(mailOptions).then(() => {
-      console.log("New email sent to:", gmailEmail);
-      res.status(200).send({ isEmailSend: true });
-      return;
+    return mailTransport.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        return res.send(err.toString());
+      }
+      return res.send("Sended");
     });
+    // console.log("New email sent to:", "youandmewebcreations@gmail.com");
+    // res.status(200).send({ isEmailSend: true });
+    // return;
   });
 });

@@ -11,7 +11,7 @@ const HomePage = () => {
       <Profiler
         id="home"
         onRender={(id, phase, actualDuration) => {
-          console.log({ id, phase, actualDuration });
+          // console.log({ id, phase, actualDuration });
         }}
       >
         <ColoredDiv
