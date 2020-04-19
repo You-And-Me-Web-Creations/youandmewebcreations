@@ -1,13 +1,13 @@
 const functions = require("firebase-functions");
-// const admin = require("firebase-admin");
 const nodemailer = require("nodemailer");
 const cors = require("cors")({ origin: true });
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
-// admin.initializeApp();
 
 const mailTransport = nodemailer.createTransport({
   service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
   auth: {
     user: gmailEmail,
     pass: gmailPassword,
@@ -35,8 +35,5 @@ exports.submit = functions.https.onRequest((req, res) => {
       }
       return res.send("Sended");
     });
-    // console.log("New email sent to:", "youandmewebcreations@gmail.com");
-    // res.status(200).send({ isEmailSend: true });
-    // return;
   });
 });
