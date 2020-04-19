@@ -18,7 +18,7 @@ const HomePage = () => {
           bg={({ theme }) => theme.palletGreen}
           fc={({ theme }) => theme.palletPurple}
           text={
-            <div>
+             <div>
               <h3>Welcome to You and Me Web Creations </h3>
               <span>My name is Diane Leigh, I am a freelance web developer/designer, located in Leavittsburg Ohio. After 30+ years in medical research I needed freedom and flexibility to enjoy my granddaugter. So, let me help you get your presence known to the world. For more background check out my</span>
             </div>
@@ -39,7 +39,7 @@ const HomePage = () => {
           fc={({ theme }) => theme.palletBlue}
           text={
             <div>
-            We can create everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. We can integrate your calendar and incorporate a schedualing component.
+            "We can create everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. We can integrate your calendar and incorporate a schedualing component."
             </div>
             }
           go_to={
