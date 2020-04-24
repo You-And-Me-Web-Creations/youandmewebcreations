@@ -16,7 +16,7 @@ const HomePage = () => {
       >
         <ColoredDiv
           bg={({ theme }) => theme.palletGreen}
-          fc={({ theme }) => theme.palletPurple}
+          fc={({ theme }) => theme.palletPurpleFont}
           text={
              <div>
               <h3>Welcome to You and Me Web Creations </h3>
@@ -36,7 +36,7 @@ const HomePage = () => {
         ></ColoredDiv>
         <ColoredDiv
           bg={({ theme }) => theme.palletOrange}
-          fc={({ theme }) => theme.palletBlue}
+          fc={({ theme }) => theme.palletBlueFont}
           text={
             <div>
               <h3>We can create everything from simple single page websites to multipage progressive web apps using cloud storage, complex forms for retrieving data from end-users and checkout pages for ecommerce. We can integrate your calendar and incorporate a schedualing component.</h3>
@@ -51,7 +51,7 @@ const HomePage = () => {
         ></ColoredDiv>
         <ColoredDiv
           bg={({ theme }) => theme.palletBlue}
-          fc={({ theme }) => theme.palletGreen}
+          fc={({ theme }) => theme.palletGreenFont}
           text={
             <div>
               <h3>My favorite part of web design is figuring out how to put the pieces together in unique and refreshing ways. We can work from your vision, or mine to create the website of your dreams. So let's get you known to the world!</h3>
@@ -62,7 +62,7 @@ const HomePage = () => {
         <ColoredDiv
           id={'contact'}
           bg={({ theme }) => theme.palletPurple}
-          fc={({ theme }) => theme.palletOrangeFont}
+          fc={({ theme }) => theme.palletWhiteFont}
           text={
             <div >
               <h1>Let's Talk</h1>

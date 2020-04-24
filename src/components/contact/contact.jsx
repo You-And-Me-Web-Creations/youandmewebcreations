@@ -47,6 +47,7 @@ const Contact = () => {
           placeholder="Name"
           onChange={updateInput}
           value={formData.name || ""}
+          label='user name'
         />
         <input
           type="email"
@@ -54,6 +55,7 @@ const Contact = () => {
           placeholder="Email"
           onChange={updateInput}
           value={formData.email || ""}
+          label='email address'
         />
         <textarea
           type="text"
@@ -61,6 +63,7 @@ const Contact = () => {
           placeholder="Message"
           onChange={updateInput}
           value={formData.message || ""}
+          label='message'
         ></textarea>
         <button type="submit">Submit</button>
       </form>

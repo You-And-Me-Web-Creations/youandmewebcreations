@@ -28,6 +28,7 @@ export const DivText = styled.div `
 
 export const WebsiteContainer = styled.div `
   width: 100%;
+  max-width: 400px;
   a {
     color: ${props => props.fc};
     text-transform: uppercase;

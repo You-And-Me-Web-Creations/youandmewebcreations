@@ -13,7 +13,7 @@ const PortfolioPage = () => {
     <PortfolioPageContainer>
       <ColoredDiv
         bg={({ theme }) => theme.palletGreen}
-        fc={({ theme }) => theme.palletPurple}
+        fc={({ theme }) => theme.palletPurpleFont}
         website={
           <a
             href="http://www.fire-fastpitch.com/"
@@ -37,7 +37,7 @@ const PortfolioPage = () => {
       ></ColoredDiv>
       <ColoredDiv
         bg={({ theme }) => theme.palletOrange}
-        fc={({ theme }) => theme.palletBlue}
+        fc={({ theme }) => theme.palletBlueFont}
         website={
           <a
             href="https://crown-ecommerce.herokuapp.com/"
@@ -60,8 +60,8 @@ const PortfolioPage = () => {
         rotation="rotate(5deg)"
       ></ColoredDiv>
         <ColoredDiv
-          bg={({ theme }) => theme.palletGreen}
-          fc={({ theme }) => theme.palletPurple}
+          bg={({ theme }) => theme.palletBlue}
+          fc={({ theme }) => theme.palletGreenFont}
           website={
             <a
               href="https://leighd2008.github.io/My_Profile/index.html"
