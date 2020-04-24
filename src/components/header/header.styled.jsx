@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 20px;
   border: 2px;
+  font-size: 2rem;
 
   @media screen and (min-width: 450px) {
     height: 150px;
@@ -27,7 +28,8 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const TitleContainer = styled.h1`
-max-width: 200;
+/* max-width: 200; */
+  font-size: 1.5rem;
   color: black;
   position: absolute;
   top: 5%;
@@ -35,7 +37,8 @@ max-width: 200;
   letter-spacing: normal;
   transform: translate(-50%, -50%);
 
-   @media screen and(min-width: 450 px) {
-     left: 50%;
-   }
+  @media screen and (min-width: 450px) {
+    font-size: 2rem;
+    left: 50%;
+  }
 `;

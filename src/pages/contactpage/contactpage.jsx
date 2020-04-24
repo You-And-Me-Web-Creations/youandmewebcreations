@@ -3,9 +3,12 @@ import React from "react";
 import ColoredDiv from "../../components/coloreddiv/coloreddiv";
 import Contact from "../../components/contact/contact";
 
+import { ContactPageContainer } from "./contactpage.styles";
+
+
 const ContactPage = () => {
   return (
-    <div>
+    <ContactPageContainer>
       <ColoredDiv
         id={'contact'}
         bg={({ theme }) => theme.palletPurple}
@@ -16,9 +19,9 @@ const ContactPage = () => {
             <Contact />
           </div>
         }
-        rotation="rotate(10deg)"
+        rotation="rotate(5deg)"
       ></ColoredDiv>
-    </div>
+    </ContactPageContainer>
   );
 };
 

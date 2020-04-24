@@ -1,16 +1,11 @@
 h1 {
-  display: table;
-  margin: 40px auto;
   color: #fff;
-  font: 30px Helvetica;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  letter-spacing: 10px;
 }
 
 form {
-  display: table;
-  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
 
   input,
   textarea {
@@ -19,7 +14,7 @@ form {
     display: block;
     border: none;
     padding: 20px;
-    width: 300px;
+    width: 95%;
     margin-bottom: 20px;
     font-size: 18px;
     outline: none;
@@ -48,12 +43,13 @@ form {
 
   button {
     transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
     font: 18px Helvetica, Arial, sans-serif;
     border: none;
     background: #1792e8;
     color: #fff;
     padding: 20px;
-    width: 100%;
+    width: 95%;
     text-transform: uppercase;
     letter-spacing: 5px;
 

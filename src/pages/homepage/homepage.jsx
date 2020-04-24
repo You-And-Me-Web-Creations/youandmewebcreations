@@ -69,7 +69,7 @@ const HomePage = () => {
               <Contact />
             </div>
           }
-          rotation="rotate(10deg)"
+          rotation="rotate(5deg)"
         ></ColoredDiv>
       </Profiler>
     </HomePageContainer>

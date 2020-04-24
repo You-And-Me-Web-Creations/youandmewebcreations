@@ -2,11 +2,15 @@ import React from "react";
 
 import ColoredDiv from "../../components/coloreddiv/coloreddiv";
 
+import {
+  PortfolioPageContainer
+} from "./portfoliopage.styles";
+
 const PortfolioPage = () => {
   const images = require.context("../../components/assets", true);
 
   return (
-    <div>
+    <PortfolioPageContainer>
       <ColoredDiv
         bg={({ theme }) => theme.palletGreen}
         fc={({ theme }) => theme.palletPurple}
@@ -81,7 +85,7 @@ const PortfolioPage = () => {
         ></ColoredDiv>
       <ColoredDiv
         bg={({ theme }) => theme.palletPurple}
-        fc={({ theme }) => theme.palletOrangeFont}
+        fc={({ theme }) => theme.palletWhiteFont}
         website={
           <a
             href="https://youandmewebcreations.herokuapp.com/"
@@ -99,9 +103,9 @@ const PortfolioPage = () => {
             <h3>This Website was built with React / Redux. Firebase is used for administration authorized sign-in and sending as well as storage of email messages.</h3>
           </div>
         }
-        rotation="rotate(10deg)"
+        rotation="rotate(7deg)"
       ></ColoredDiv>
-    </div>
+    </PortfolioPageContainer>
   );
 };
 
