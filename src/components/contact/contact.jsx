@@ -13,14 +13,14 @@ const Contact = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    sendEmail();
+    // sendEmail();
     setFormData({
       name: "",
       email: "",
       message: "",
     });
-  };
-  const sendEmail = () => {
+  // };
+  // const sendEmail = () => {
     Axios.post(
       "https://us-central1-youandmewebcreations-2b76d.cloudfunctions.net/submit",
       formData

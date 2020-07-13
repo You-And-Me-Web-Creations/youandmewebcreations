@@ -29,11 +29,14 @@ exports.submit = functions.https.onRequest((req, res) => {
       html: `<p>${req.body.message}</p>`,
     };
 
-    return mailTransport.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        return res.send(err.toString());
-      }
-      return res.send("Sended");
-    });
+    mailTransport.sendMail(mailOptions);
+    res.status(200).send({ isEmailSend: true });
+
+    // return mailTransport.sendMail(mailOptions, (err, info) => {
+    //   if (err) {
+    //     return res.send(err.toString());
+    //   }
+    //   return res.send("Sent");
+    // });
   });
 });
