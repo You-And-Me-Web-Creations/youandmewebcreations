@@ -14,6 +14,12 @@ export const ColoredDivContainer = styled.div `
   @media screen and (min-width: 1500px) {
     margin: 1rem auto 2rem auto;
   }
+
+  @media screen and (max-width: 450px) {
+    margin: auto;
+    padding: 0.5rem;
+    width: 70%;
+  }
 `;
 
 export const DivText = styled.div `

@@ -7,6 +7,11 @@ form {
   flex-direction: column;
   margin: 10px 20px;
 
+  @media screen and (max-width: 450px) {
+    margin: 0;
+    padding: 0;
+  }
+
   input,
   textarea {
     font: 18px Helvetica, Arial, sans-serif;
@@ -35,6 +40,11 @@ form {
         color: transparent;
       }
     }
+
+    @media screen and (max-width: 450px) {
+      margin: 5px;
+      padding: 10px;
+    }
   }
 
   textarea {
@@ -56,6 +66,10 @@ form {
     &:hover {
       background: #1873a5;
       cursor: pointer;
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 100%;
     }
   }
 }
