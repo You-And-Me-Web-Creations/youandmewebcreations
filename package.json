@@ -9,7 +9,7 @@
     "axios": "^1.6.0",
     "cors": "^2.8.5",
     "firebase": "^9.10.0",
-    "firebase-tools": "^11.22.0",
+    "firebase-tools": "^13.0.3",
     "nodemailer": "^6.4.17",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
